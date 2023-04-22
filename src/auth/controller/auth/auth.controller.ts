@@ -11,4 +11,10 @@ export class AuthController {
   signIn(@Body() userRequest: User): any {
     return this.authService.signIn(userRequest);
   }
+
+  @HttpCode(HttpStatus.CREATED)
+  @Post('register')
+  signUp(@Body() userRequest: User) {
+    return this.authService.signUp(userRequest);
+  }
 }
