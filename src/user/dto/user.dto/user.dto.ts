@@ -10,5 +10,8 @@ export class UserDto {
   @IsNotEmpty()
   lastName: string;
 
+  @IsNotEmpty()
+  password: string;
+
   isActive: boolean;
 }
