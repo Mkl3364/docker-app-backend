@@ -6,6 +6,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './user/user.entity';
 import { LikeModule } from './like/like.module';
 import { LikeEntity } from './like/entity/like.entity/like.entity';
+import { AuthModule } from './auth/auth.module';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 require('dotenv').config();
@@ -23,6 +24,7 @@ require('dotenv').config();
       synchronize: true,
     }),
     LikeModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
