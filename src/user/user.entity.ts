@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { LikeEntity } from 'src/like/entity/like.entity/like.entity';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 
 @Entity()
 export class User {
@@ -16,4 +17,7 @@ export class User {
 
   @Column({ default: true })
   isActive: boolean;
+
+  @OneToMany((type) => LikeEntity, (like) => like.userId)
+  likes: LikeEntity[];
 }
