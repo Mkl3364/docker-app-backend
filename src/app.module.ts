@@ -5,6 +5,7 @@ import { UserModule } from './user/user.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './user/user.entity';
 import { LikeModule } from './like/like.module';
+import { LikeEntity } from './like/entity/like.entity/like.entity';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 require('dotenv').config();
@@ -18,7 +19,7 @@ require('dotenv').config();
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_DATABASE,
-      entities: [User],
+      entities: [User, LikeEntity],
       synchronize: true,
     }),
     LikeModule,
